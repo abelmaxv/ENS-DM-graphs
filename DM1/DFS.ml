@@ -37,16 +37,16 @@ module DFS (X:Graph_t) =
 
 
 (* Implementation of a graph with an array of lists *)
+module G = struct
+  type graph = int list array
+  let size g = Array.length g
+  let get_neighbours g v = g.(v)
+end
+
+module D = DFS(G)
 
 (* Test0: Unvalid input *)
-
 let test0 () =
-  let module G = struct
-    type graph = int list array
-    let size g = Array.length g
-    let get_neighbours g v = g.(v)
-  end in
-  let module D = DFS(G) in
   let graph = [| [1; 2]; [0; 3]; [0; 3]; [1; 2] |] in
   let start_vertex = 6 in
   let result = D.dfs graph start_vertex in
@@ -56,12 +56,6 @@ let test0 () =
 
 (* Test1: Small correct input *)
 let test1 () =
-  let module G = struct
-    type graph = int list array
-    let size g = Array.length g
-    let get_neighbours g v = g.(v)
-  end in
-  let module D = DFS(G) in
   let graph = [| [1; 2]; [0; 3]; [0; 3]; [1; 2] |] in
   let start_vertex = 0 in
   let result = D.dfs graph start_vertex in
@@ -71,12 +65,6 @@ let test1 () =
 
 (* Test 2: graph with disconnected components  *)
 let test2 () =
-  let module G = struct
-    type graph = int list array
-    let size g = Array.length g
-    let get_neighbours g v = g.(v)
-  end in
-  let module D = DFS(G) in
   let graph = [| [1; 2]; [0]; [0]; [3]; [4]; [3] |] in
   let start_vertex = 0 in
   let result = D.dfs graph start_vertex in
