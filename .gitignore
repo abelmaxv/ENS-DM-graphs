@@ -2,3 +2,5 @@
 *.cmx
 *.o
 DM1/DFS
+DM2/topo
+.DS_Store

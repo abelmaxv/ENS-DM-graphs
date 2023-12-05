@@ -50,7 +50,7 @@ let test0 () =
   let graph = [| [1; 2]; [0; 3]; [0; 3]; [1; 2] |] in
   let start_vertex = 6 in
   let result = D.dfs graph start_vertex in
-  Printf.printf "Test 1 : \n";
+  Printf.printf "Test 0 : \n";
   List.iter (Printf.printf "%d") result;
   Printf.printf "\n"
 
