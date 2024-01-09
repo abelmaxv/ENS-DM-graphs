@@ -85,7 +85,7 @@ let test2 () =
   Printf.printf "\n\n"
 
 
-(* Test3: Graph with a slighlty more complex DAG *)
+(* Test3: A slighlty more complex DAG *)
 let test3 () =
   let graph = [| [1; 2]; [3; 4]; []; [5;2]; [6]; []; [7]; [8]; []; [8] |] in
   let result = D.topo_sort graph  in
